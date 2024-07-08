@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021453F396E325091137D85C /* Pods_MyCollectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2A19455CFA00A12997AA36 /* Pods_MyCollectionApp.framework */; };
 		C052C48A2C258C43004CBC1C /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052C4892C258C43004CBC1C /* HeaderCollectionReusableView.swift */; };
 		C0AC67FD2C28196A00F2BB46 /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AC67FC2C28196A00F2BB46 /* CircleCollectionViewCell.swift */; };
 		C0AC68022C29182D00F2BB46 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0AC68012C29182D00F2BB46 /* MyCollectionViewCell.xib */; };
@@ -17,9 +18,14 @@
 		C0BB65932C256FE000518203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C0BB65922C256FE000518203 /* Base */; };
 		C0BB65952C256FE100518203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0BB65942C256FE100518203 /* Assets.xcassets */; };
 		C0BB65982C256FE100518203 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C0BB65972C256FE100518203 /* Base */; };
+		C0C655832C2AD3CA004D386E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C655822C2AD3CA004D386E /* Photo.swift */; };
+		C0C655852C2B0FBB004D386E /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C655842C2B0FBB004D386E /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1B2EBF5F13688EE866BDA0 /* Pods-MyCollectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCollectionApp.release.xcconfig"; path = "Target Support Files/Pods-MyCollectionApp/Pods-MyCollectionApp.release.xcconfig"; sourceTree = "<group>"; };
+		7A2A19455CFA00A12997AA36 /* Pods_MyCollectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCollectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		901B14B338ABCCA6986E57ED /* Pods-MyCollectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCollectionApp.debug.xcconfig"; path = "Target Support Files/Pods-MyCollectionApp/Pods-MyCollectionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C052C4892C258C43004CBC1C /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		C0AC67FC2C28196A00F2BB46 /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0AC68002C29182D00F2BB46 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -32,6 +38,8 @@
 		C0BB65942C256FE100518203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0BB65972C256FE100518203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0BB65992C256FE100518203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C655822C2AD3CA004D386E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C0C655842C2B0FBB004D386E /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021453F396E325091137D85C /* Pods_MyCollectionApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD74226612BD223BC60A245 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				901B14B338ABCCA6986E57ED /* Pods-MyCollectionApp.debug.xcconfig */,
+				0B1B2EBF5F13688EE866BDA0 /* Pods-MyCollectionApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		513BDC8655F9D1AF8501EB5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A2A19455CFA00A12997AA36 /* Pods_MyCollectionApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0BB657F2C256FE000518203 = {
 			isa = PBXGroup;
 			children = (
 				C0BB658A2C256FE000518203 /* MyCollectionApp */,
 				C0BB65892C256FE000518203 /* Products */,
+				1AD74226612BD223BC60A245 /* Pods */,
+				513BDC8655F9D1AF8501EB5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +95,7 @@
 				C0BB658B2C256FE000518203 /* AppDelegate.swift */,
 				C0BB658D2C256FE000518203 /* SceneDelegate.swift */,
 				C0BB658F2C256FE000518203 /* ViewController.swift */,
+				C0C655822C2AD3CA004D386E /* Photo.swift */,
 				C0BB65912C256FE000518203 /* Main.storyboard */,
 				C0BB65942C256FE100518203 /* Assets.xcassets */,
 				C0BB65962C256FE100518203 /* LaunchScreen.storyboard */,
@@ -75,6 +104,7 @@
 				C0AC67FC2C28196A00F2BB46 /* CircleCollectionViewCell.swift */,
 				C0AC68002C29182D00F2BB46 /* MyCollectionViewCell.swift */,
 				C0AC68012C29182D00F2BB46 /* MyCollectionViewCell.xib */,
+				C0C655842C2B0FBB004D386E /* PhotoController.swift */,
 			);
 			path = MyCollectionApp;
 			sourceTree = "<group>";
@@ -86,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0BB659C2C256FE100518203 /* Build configuration list for PBXNativeTarget "MyCollectionApp" */;
 			buildPhases = (
+				DD9A6CDDC82561BE689F4023 /* [CP] Check Pods Manifest.lock */,
 				C0BB65842C256FE000518203 /* Sources */,
 				C0BB65852C256FE000518203 /* Frameworks */,
 				C0BB65862C256FE000518203 /* Resources */,
+				2A9EF1B9F2D1209E0B6C117D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,16 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A9EF1B9F2D1209E0B6C117D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCollectionApp/Pods-MyCollectionApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCollectionApp/Pods-MyCollectionApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCollectionApp/Pods-MyCollectionApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD9A6CDDC82561BE689F4023 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyCollectionApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0BB65842C256FE000518203 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C655832C2AD3CA004D386E /* Photo.swift in Sources */,
 				C0BB65902C256FE000518203 /* ViewController.swift in Sources */,
 				C0BB658C2C256FE000518203 /* AppDelegate.swift in Sources */,
 				C0AC68032C29182D00F2BB46 /* MyCollectionViewCell.swift in Sources */,
 				C0AC67FD2C28196A00F2BB46 /* CircleCollectionViewCell.swift in Sources */,
 				C052C48A2C258C43004CBC1C /* HeaderCollectionReusableView.swift in Sources */,
+				C0C655852C2B0FBB004D386E /* PhotoController.swift in Sources */,
 				C0BB658E2C256FE000518203 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,12 +379,14 @@
 		};
 		C0BB659D2C256FE100518203 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901B14B338ABCCA6986E57ED /* Pods-MyCollectionApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45C3927649;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCollectionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,12 +409,14 @@
 		};
 		C0BB659E2C256FE100518203 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B1B2EBF5F13688EE866BDA0 /* Pods-MyCollectionApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45C3927649;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCollectionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

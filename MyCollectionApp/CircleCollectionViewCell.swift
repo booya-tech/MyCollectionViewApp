@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CircleCollectionViewCell: UICollectionViewCell {
     static var identifier = "CircleCollectionViewCell"
@@ -38,8 +39,10 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.frame = contentView.bounds
     }
     
-    public func configure(with models: Girl) {
-        self.imageView.image = UIImage(named: models.name)
+    public func configure(with photo: Photo) {
+        if let imageUrl = photo.imageURLs.first {
+            imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
+        }
     }
     
     override func prepareForReuse() {

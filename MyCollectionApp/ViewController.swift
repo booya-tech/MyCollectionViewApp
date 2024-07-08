@@ -6,32 +6,59 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class ViewController: UIViewController {
+    
+    var photoController = PhotoController()
+    var photos: [Photo] = []
+    
     @IBOutlet var collectionView: UICollectionView!
     var collectionViewCircle: UICollectionView!
-    
-    var models: [Girl] = [
-        Girl(name: "image_1", description: "My name is Jennie!"),
-        Girl(name: "image_2", description: "My name is Jennie1!"),
-        Girl(name: "image_3", description: "My name is Jennie2!"),
-        Girl(name: "image_1", description: "My name is Jennie!"),
-        Girl(name: "image_2", description: "My name is Jennie1!"),
-        Girl(name: "image_3", description: "My name is Jennie2!"),
-        Girl(name: "image_1", description: "My name is Jennie!"),
-        Girl(name: "image_2", description: "My name is Jennie1!"),
-        Girl(name: "image_3", description: "My name is Jennie2!"),
-        Girl(name: "image_1", description: "My name is Jennie!"),
-        Girl(name: "image_2", description: "My name is Jennie1!"),
-        Girl(name: "image_3", description: "My name is Jennie2!"),
-        Girl(name: "image_1", description: "My name is Jennie!"),
-        Girl(name: "image_2", description: "My name is Jennie1!"),
-        Girl(name: "image_3", description: "My name is Jennie2!")
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        // MARK: - Networking
+
+        // Test Alamofire
+        photoController.fetchPhotos { (response) in
+            switch response {
+            case .success(let fetchedPhotos):
+                self.photos = fetchedPhotos
+//                print("photos: \(self.photos)")
+                print("fetchPhotos: \(fetchedPhotos)")
+            case .failure(let error):
+                print("Error fetching photos: \(error.localizedDescription)")
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.collectionViewCircle.reloadData()
+            }
+        }
+//        fetchPhotos()
+        
+    //    func fetchPhotos() {
+    //        let url = "https://api.500px.com/v1/photos?feature=popular&page=1"
+    //        let headers: HTTPHeaders = [
+    //            "Authorization": "Bearer YOUR_OAUTH_TOKEN"
+    //        ]
+    //
+    //        AF.request(url, headers: headers).responseDecodable(of: PhotosResponse.self) { response in
+    //            switch response.result {
+    //            case .success(let photosResponse):
+    //                self.photos = photosResponse.photos
+    //
+    //                DispatchQueue.main.async {
+    //                    self.collectionView.reloadData()
+    //                    self.collectionViewCircle.reloadData()
+    //                }
+    //            case .failure(let error):
+    //                print("Error fetching photos: \(error)")
+    //            }
+    //        }
+    //    }
         
         // The first collection view layout
         let layout = UICollectionViewFlowLayout()
@@ -79,19 +106,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Set the frame for collectionViewCircle on top of collectionView
         collectionViewCircle.frame = CGRect(x: 0, y: safeArea.top, width: view.frame.size.width, height: 75).integral
     }
+}
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-            cell.configure(with: models[indexPath.row])
+            
+            let photo = photos[indexPath.item]
+            cell.configure(with: photo)
             return cell
         } else if collectionView.tag == 2 {
             let cell = collectionViewCircle.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
-            cell.configure(with: models[indexPath.row])
+            
+            let photo = photos[indexPath.item]
+            cell.configure(with: photo)
             return cell
         }
         return UICollectionViewCell()
@@ -120,15 +153,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return CGSize(width: view.frame.size.width, height: 100)
         }
         return CGSize.zero
-    }
-}
-
-struct Girl {
-    var name: String
-    var description: String
-    
-    init(name: String, description: String) {
-        self.name = name
-        self.description = description
     }
 }

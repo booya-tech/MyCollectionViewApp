@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MyCollectionViewCell: UICollectionViewCell {
     
@@ -23,10 +24,10 @@ class MyCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func configure(with model: Girl) {
-        self.imageView.image = UIImage(named: model.name)
-//        self.textDescription.text = model.description
-        
+    public func configure(with photo: Photo) {
+        if let imageUrl = photo.imageURLs.first {
+            imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
+        }
     }
     
 }
