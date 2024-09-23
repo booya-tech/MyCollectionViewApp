@@ -11,7 +11,6 @@ import SDWebImage
 class MyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
-//    @IBOutlet var textDescription: UILabel!
     
     static var identifier = "MyCollectionViewCell"
     
@@ -22,6 +21,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imageView.contentMode = .scaleAspectFill
     }
     
     public func configure(with photo: Photo) {

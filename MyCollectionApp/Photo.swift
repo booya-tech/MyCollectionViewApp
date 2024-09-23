@@ -11,6 +11,7 @@ struct Photo: Codable {
     let id: Int
     let createdAt: String
     let imageURLs: [String]
+    let height: CGFloat = CGFloat.random(in: 200...400)
     
     enum CodingKeys: String, CodingKey {
         case id
